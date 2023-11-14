@@ -10,6 +10,12 @@ namespace EmailNotification_DI_and_IoC
     {
         static void Main(string[] args)
         {
+            RunNotificationDemo();
+            Console.ReadLine(); // Keep the console window open
+        }
+
+        static void RunNotificationDemo()
+        {
             // Create instances of notification services
             var emailNotificationService = new EmailNotificationService();
             var smsNotificationService = new SmsNotificationService();
@@ -23,9 +29,7 @@ namespace EmailNotification_DI_and_IoC
             // Send notifications
             emailNotificationClient.NotifyUser("New email received");
             smsNotificationClient.NotifyUser("You have a new SMS");
-            telephoneNotificationClient.NotifyUser("Telepthone is ringing");
-
-            Console.ReadLine(); // Keep the console window open
+            telephoneNotificationClient.NotifyUser("Telephone is ringing");
         }
     }
 
